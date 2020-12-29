@@ -1,0 +1,45 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="light">Profile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">Profile</ion-label>
+  </div>
+
+  <div class="main_content_div" [class.ios_main]="plt == 'ios'">
+
+    <ion-label class="edit_lbl" (click)="goToEditProfile()">Edit Profile</ion-label>
+
+    <div class="green_div">
+      <div class="white_div" [style.backgroundImage]="'url(assets/imgs/user.jpg)'"></div>
+    </div>
+
+    <div class="content_div">
+      <ion-label class="username">Wandile</ion-label>
+      <ion-label class="email">wandile.chamane@gmail.com</ion-label>
+    </div>
+
+    <div class="menu_div">
+
+      <ion-item lines="none" (click)="goToHistory()">
+        <ion-label>History</ion-label>
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item lines="none" (click)="goToBooking()">
+        <ion-label>Booking</ion-label>
+        <ion-icon slot="start" name="newspaper-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item lines="none" (click)="logout()">
+        <ion-label>Logout</ion-label>
+        <ion-icon slot="start" name="power-outline"></ion-icon>
+      </ion-item>
+
+    </div>
+  </div>
+</ion-content>

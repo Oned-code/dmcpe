@@ -1,0 +1,73 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>chat</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">Chat</ion-label>
+
+    <ion-button class="call2" fill="clear">
+      <ion-icon slot="icon-only" name="call"></ion-icon>
+    </ion-button>
+
+    <ion-button class="call" fill="clear">
+      <ion-icon name="videocam"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="main_content_div" [class.ios_main]="plt == 'ios'">
+
+    <span *ngFor="let item of messages">
+      <div class="left_div" *ngIf="item.side == 'left'">
+        <div class="inner_div">
+          <div class="msg_div">
+            <ion-label>{{item.msg}}</ion-label>
+            <div class="tri_left"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right_div" *ngIf="item.side == 'right'">
+        <div class="inner_div">
+          <div class="msg_div">
+            <ion-label>{{item.msg}}</ion-label>
+            <div class="tri_right"></div>
+          </div>
+        </div>
+      </div>
+    </span>
+
+    <span *ngFor="let item of messages">
+      <div class="left_div" *ngIf="item.side == 'left'">
+        <div class="inner_div">
+          <div class="msg_div">
+            <ion-label>{{item.msg}}</ion-label>
+            <div class="tri_left"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right_div" *ngIf="item.side == 'right'">
+        <div class="inner_div">
+          <div class="msg_div">
+            <ion-label>{{item.msg}}</ion-label>
+            <div class="tri_right"></div>
+          </div>
+        </div>
+      </div>
+    </span>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer_div">
+    <ion-input type="text" placeholder="Type Here.."></ion-input>
+    <div class="chat_div">
+      <ion-icon name="navigate"></ion-icon>
+    </div>
+  </div>
+</ion-footer>

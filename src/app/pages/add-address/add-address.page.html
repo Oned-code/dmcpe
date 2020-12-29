@@ -1,0 +1,53 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Address Details</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">Address Details</ion-label>
+    <ion-button (click)="goBack()" fill="clear" class="back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="main_content_div" [class.ios_main]="plt == 'ios'">
+
+    <ion-label class="simple_lbl">Please add your address Detail</ion-label>
+
+    <ion-label class="small_lbl">Your Name</ion-label>
+    <ion-input type="text" placeholder="Your Name"></ion-input>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6" style="padding-left: 0px;">
+          <ion-label class="small_lbl">Your City</ion-label>
+          <ion-input type="text" placeholder="City"></ion-input>
+        </ion-col>
+        <ion-col size="6" style="padding-right: 0px;">
+          <ion-label class="small_lbl">Pincode</ion-label>
+          <ion-input type="text" placeholder="Pin code"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-label class="small_lbl">Landmark</ion-label>
+    <ion-input type="text" placeholder="Landmark"></ion-input>
+
+    <ion-label class="small_lbl">Your Address</ion-label>
+
+    <ion-textarea placeholder="Your adress" autoGrow="true" rows="4"></ion-textarea>
+
+    <div class="btn_div">
+      <ion-button (click)="goToSuceess()" shape="round">
+        Next <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>

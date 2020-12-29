@@ -1,0 +1,57 @@
+// ion-toolbar{
+//     --background: var(--ion-color-primary);
+//     border-bottom-right-radius: 25px;
+//     height: 70px;
+//     display: flex;
+// }
+.main_content_div{
+    padding: 16px;
+    padding-top: 80px;
+
+    ion-label {
+        display: block;
+    }
+
+    .simple_lbl{
+        font-size: 18px;
+        font-family: 'regular';
+    }
+
+    .cal_header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+
+        ion-button{
+            --background: white;
+            color: black;
+        }
+
+        .month_lbl{
+            color: black;
+            font-size: 12px;
+            font-family: 'semi-bold';
+        }
+    }
+
+    ion-grid{
+        padding: 0;
+        margin-top: 20px;
+
+        ion-datetime{
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+    }
+
+    .btn_div{
+        margin-top: 30px;
+        text-align: right;
+        .btn_last{
+            width: 140px;
+            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+        }
+    }
+}

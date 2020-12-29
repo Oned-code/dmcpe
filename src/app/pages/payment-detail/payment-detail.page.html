@@ -1,0 +1,49 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Payment Detail</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">Payment Detail</ion-label>
+    <ion-button (click)="goBack()" fill="clear" class="back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="main_content_div" [class.ios_main]="plt == 'ios'">
+
+    <ion-label class="simple_lbl">Choose Your Payment Method</ion-label>
+
+    <ion-label class="small_lbl">Total Price <span>$200.00</span></ion-label>
+
+    <div class="card_div" (click)="chooseMethod(1)">
+      <ion-label class="small_lbl">My Default Card</ion-label>
+      <ion-label>**** **** **** 4242</ion-label>
+      <ion-icon name="checkmark-circle" *ngIf="method == 1"></ion-icon>
+    </div>
+
+    <div class="card_div" (click)="chooseMethod(2)">
+      <ion-label class="small_lbl">Visa Card</ion-label>
+      <ion-label>**** **** **** 4242</ion-label>
+      <ion-icon name="checkmark-circle" *ngIf="method == 2"></ion-icon>
+    </div>
+
+    <div class="card_div" (click)="chooseMethod(3)">
+      <ion-label class="small_lbl">Master Card</ion-label>
+      <ion-label>**** **** **** 4242</ion-label>
+      <ion-icon name="checkmark-circle" *ngIf="method == 3"></ion-icon>
+    </div>
+
+    <div class="add_new_div" (click)="goToAddCard()">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>Add New Card</ion-label>
+    </div>
+
+  </div>
+</ion-content>

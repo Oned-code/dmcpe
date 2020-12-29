@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="light">Rating</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="4" *ngFor="let item of [1,2,3]">
+          <ion-chip mode="ios" (click)="selectCleaner(item)" [class.active]="cleaner == item">
+            <ion-label>Cleaner {{item}}</ion-label>
+          </ion-chip>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="user_detail" *ngIf=" cleaner == 1">
+      <div class="green_div">
+        <div class="white_div" [style.backgroundImage]="'url(assets/imgs/user.jpg)'"></div>
+      </div>
+
+      <div class="content_div">
+        <ion-label class="username">Mausam Chavda</ion-label>
+
+        <ion-rating [rate]="rate" [(ngModel)]="rate" readonly="false" size="large" >
+        </ion-rating>
+
+        <div class="btn_div">
+          <ion-button (click)="close()" shape="round">
+            Submit
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="user_detail" *ngIf=" cleaner == 2">
+      <div class="green_div">
+        <div class="white_div" [style.backgroundImage]="'url(assets/imgs/user2.jpg)'"></div>
+      </div>
+
+      <div class="content_div">
+        <ion-label class="username">Mausam Chavda</ion-label>
+
+        <ion-rating [rate]="rate" [(ngModel)]="rate" readonly="false" size="large" >
+        </ion-rating>
+
+        <div class="btn_div">
+          <ion-button (click)="close()" shape="round">
+            Submit
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="user_detail" *ngIf=" cleaner == 3">
+      <div class="green_div">
+        <div class="white_div" [style.backgroundImage]="'url(assets/imgs/user3.jpg)'"></div>
+      </div>
+
+      <div class="content_div">
+        <ion-label class="username">Rahul Jograna</ion-label>
+
+        <ion-rating [rate]="rate" [(ngModel)]="rate" readonly="false" size="large" >
+        </ion-rating>
+
+        <div class="btn_div">
+          <ion-button (click)="close()" shape="round">
+            Submit
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>

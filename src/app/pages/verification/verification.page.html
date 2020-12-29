@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-label class="simple_lbl">Enter Verification Code</ion-label>
+
+    <div class="centent_div">
+      <ng-otp-input [config]="config"></ng-otp-input>
+
+      <ion-label class="resend_code">Resend Code</ion-label>
+
+      <ion-button (click)="goToHome()" shape="round">
+        <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+        Verify
+      </ion-button>
+
+    </div>
+
+  </div>
+</ion-content>

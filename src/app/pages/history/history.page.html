@@ -1,0 +1,41 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="light">History</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">History</ion-label>
+  </div>
+
+  <div class="main_content_div">
+
+    <ion-label class="simple_lbl">Completed Booking</ion-label>
+
+    <div class="card_div" *ngFor="let item of [1,2,3]">
+      <div class="up_div">
+        <ion-label class="small_lbl">Living Room Cleaning Service</ion-label>
+        <div class="flex_div">
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-label>12-Apr-2020</ion-label>
+        </div>
+        <div class="flex_div">
+          <ion-icon name="time-outline"></ion-icon>
+          <ion-label>09:00 AM TO 03:00 PM</ion-label>
+        </div>
+        <div class="flex_div">
+          <ion-icon name="cash-outline"></ion-icon>
+          <ion-label>$ 200.00</ion-label>
+        </div>
+      </div>
+      <div class="bottom_div">
+        <ion-label class="cleaner_detail" (click)="goToRating()">Cleaner Rating</ion-label>
+        <ion-label>Order ID : 2087467</ion-label>
+      </div>
+    </div>
+
+
+  </div>
+</ion-content>

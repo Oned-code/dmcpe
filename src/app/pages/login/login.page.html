@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="segment_div">
+      <div (click)="changeSegment(1)">
+        <ion-label>Sign In</ion-label>
+        <div class="line_div" *ngIf="segId == 1"></div>
+      </div>
+
+      <div (click)="changeSegment(2)">
+        <ion-label>Sign Up</ion-label>
+        <div class="line_div" *ngIf="segId == 2"></div>
+      </div>
+    </div>
+
+    <div class="content_div" *ngIf="segId == 1">
+      <img src="assets/imgs/logo.png" alt="">
+      <ion-label class="simple_lbl" style="color: gray;">Welcome</ion-label>
+
+      <ion-label class="simple_lbl">Sign In to Continue</ion-label>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Username</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Password</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-label class="forgot_lbl">Forgot Password ?</ion-label>
+
+      <ion-button (click)="goToVerification()" shape="round">
+        <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+        Sign In
+      </ion-button>
+    </div>
+
+    <div class="content_div" *ngIf="segId == 2">
+      <img src="assets/imgs/logo.png" alt="">
+      <ion-label class="simple_lbl" style="color: gray;">Welcome</ion-label>
+
+      <ion-label class="simple_lbl">Sign Up to Continue</ion-label>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Email ID</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Mobile No.</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Password</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-button (click)="goToVerification()" shape="round">
+        <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+        Sign Up
+      </ion-button>
+
+    </div>
+
+
+  </div>
+</ion-content>

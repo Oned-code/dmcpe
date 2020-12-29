@@ -1,0 +1,54 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">Edit Profile</ion-label>
+    <ion-button (click)="goBack()" fill="clear" class="back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="main_content_div" [class.ios_main]="plt == 'ios'">
+
+    <div class="green_div" (click)="presentActionSheet()">
+      <div class="white_div" [style.backgroundImage]="'url(assets/imgs/user.jpg)'"></div>
+    </div>
+
+    <div class="content_div">
+      <ion-label class="username">Wandile</ion-label>
+      <ion-label class="email">wandile.chamane@gmail.com<</ion-label>
+    </div>
+
+    <div class="menu_div">
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Name</ion-label>
+        <ion-input value="Mausam Chavda"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Email ID</ion-label>
+        <ion-input value="mausam123@hmail.com"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Mobile No.</ion-label>
+        <ion-input value="9876543212"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="goToProfile()" shape="round">
+        Save Profile
+      </ion-button>
+
+    </div>
+
+  </div>
+</ion-content>

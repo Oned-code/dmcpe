@@ -1,0 +1,58 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title color="light">Home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header_div" [class.ios_header]="plt == 'ios'">
+    <ion-label class="title_lbl">Home</ion-label>
+  </div>
+
+  <div class="main_content_div" [class.ios_main]="plt == 'ios'">
+
+    <ion-label class="simple_lbl">Discover</ion-label>
+    <ion-label class="bold_lbl">Services</ion-label>
+
+    <!-- <ion-searchbar placeholder="Search Services" showCancelButton="never"></ion-searchbar> -->
+
+    <ion-input type="text" placeholder="Search Service">
+      <ion-icon name="search"></ion-icon>
+    </ion-input>
+
+    <!-- <div class="slider_div">
+      <ion-slides mode="ios" pager="ios">
+        <ion-slide>
+          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/slide1.jpg)'"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/slide2.jpg)'"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/slide3.jpg)'"></div>
+        </ion-slide>
+      </ion-slides>
+    </div> -->
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of services; let i = index">
+          <div class="ser_div" (click)="selectService(item)">
+            <ion-icon name="checkmark-circle" *ngIf="service == item"></ion-icon>
+            <ion-icon class="item_icons" name="{{item.img.split('/')[2].split('.')[0]}}" color="secondary"></ion-icon>
+            <ion-label>{{item.name}}</ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="6"></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="btn_div">
+      <ion-button (click)="goToSelectDate()" shape="round">
+        Next <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>
