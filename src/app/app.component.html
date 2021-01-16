@@ -1,3 +1,53 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+    <ion-menu side="start" contentId="content" [menuId]="'menu'" style="--side-max-width: 15%; --border: var(--ion-color-tertiary)">
+      <ion-header class="header_no_border">
+        <ion-toolbar color="tertiary">
+          <ion-row>
+            <ion-col size="4">
+              <a [routerLink]="'/tabs/home'">
+               <img src="assets/imgs/logo.png" alt="DMCPE">
+              </a>
+            </ion-col>
+          </ion-row>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+            <ion-item *ngFor="let menuItem of nav">
+                <ion-menu-toggle  *ngIf="menuItem.name !== 'Services'" [autoHide]="false" [menu]="menu">
+                  <a [routerLink]="menuItem.link">
+    <!--                <ion-icon [name]="menuItem.icon" *ngIf="menuItem.name !== 'Service'"></ion-icon>-->
+    <!--                <ion- [name]="menuItem.icon" *ngIf="menuItem.name === 'Service'"></ion->-->
+                    {{ menuItem.name }}
+                  </a>
+                </ion-menu-toggle>
+                <mat-expansion-panel color="secondary" *ngIf="menuItem.name === 'Services'" style="width: 100%;">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ menuItem.name }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ion-list>
+                        <ion-item *ngFor="let serviceItem of menuItem.children">
+                            <ion-menu-toggle [autoHide]="false" [menu]="menu">
+                                <a [routerLink]="serviceItem.link">
+                                    <!--                <ion-icon [name]="menuItem.icon" *ngIf="menuItem.name !== 'Service'"></ion-icon>-->
+                                    <!--                <ion- [name]="menuItem.icon" *ngIf="menuItem.name === 'Service'"></ion->-->
+                                    {{ serviceItem.name }}
+                                </a>
+                            </ion-menu-toggle>
+                        </ion-item>
+                    </ion-list>
+                </mat-expansion-panel>
+            </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+      <ion-router-outlet id="content" style="--side-max-width: 100%"></ion-router-outlet>
+    </ion-app>
+
+
+
+
+
+

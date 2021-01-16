@@ -40,24 +40,30 @@
     //  font-family: 'semi-bold';
  }
 
+a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
 body {
-    background-image: url("assets/imgs/bg.png");
+    background: #fff;
+    //background-image: url("assets/imgs/bg.png");
     background-size: 275px;
 }
 
 .header_div{
     height: 70px;
     width: 100%;
-    // border-bottom-right-radius: 25px;
-    background: none;//linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+    background: none;//var(--ion-color-primary);
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     z-index: 99999;
+    //border-bottom: 1px solid var(--ion-color-primary);
 
     img {
-        width: 94px;
+        width: 61px;
         justify-self: left;
     }
 
@@ -133,7 +139,7 @@ ion-modal.custom_modal {
 ion-toolbar{
     height: 70px;
     display: flex;
-    --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+    --background: var(--ion-color-primary);
 }
 
 .event-detail-container{
@@ -153,4 +159,32 @@ td{
 }
 .monthview-selected{
     background-color: var(--ion-color-primary) !important;
+}
+
+.button-round {
+    --border-radius: 0 !important;
+    margin: -1px;
+}
+
+ion-card {
+    max-width: 300px;
+    margin: 30px auto;
+    ion-button {
+        width: 100%;
+        margin: 0;
+        button {
+            box-shadow: none;
+        }
+    }
+}
+
+ion-grid ion-row > * {
+    margin: 0 auto;
+    ion-col ion-card {
+
+    }
+}
+
+[color="secondary"] {
+    --color: var(--ion-color-secondary) !important;
 }

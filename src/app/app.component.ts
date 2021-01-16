@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import {IonMenu, Platform} from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './services/auth.service';
+import {viewClassName} from '@angular/compiler';
+import {createViewChild} from '@angular/compiler/src/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,11 +17,55 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent {
   plt;
+    @ViewChild('#menu') menu: IonMenu;
+
+    nav = [
+      {
+        name: 'About Us',
+        icon: 'newspaper',
+        link: '/tabs/booking',
+      },
+      {
+        name: 'Services',
+        icon: 'person',
+        link: '/tabs/services',
+        children: [
+            {
+              name: 'Home & Micro Renovations',
+              icon: '',
+              link: '/tabs/home-renovations'
+            }, {
+              name: 'Corporate & Developers',
+              icon: '',
+              link: '/tabs/corp-and-developers'
+            }]
+      },
+      {
+        name: 'Gallery & Reviews',
+        icon: 'chatbubbles',
+        link: '/tabs/chat',
+      },
+      {
+        name: 'Contact us',
+        icon: 'chatbubbles',
+        link: '/tabs/chat',
+      },
+      {
+        name: 'logout',
+        icon: 'log-out',
+        link: '/tabs/logout',
+      },
+
+
+    ];
+
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private oneSignal: OneSignal
+    private oneSignal: OneSignal,
+    public auth: AuthService
   ) {
     this.initializeApp();
   }

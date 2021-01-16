@@ -8,7 +8,7 @@
   <div class="main_content_div">
 
     <div class="segment_div">
-      <div (click)="changeSegment(1)">
+      <div (click)="changeSegment(2)">
         <ion-label>Sign In</ion-label>
         <div class="line_div" *ngIf="segId == 1"></div>
       </div>
@@ -26,13 +26,13 @@
       <ion-label class="simple_lbl">Sign In to Continue</ion-label>
 
       <ion-item>
-        <ion-label class="small_lbl" position="floating">Username</ion-label>
-        <ion-input></ion-input>
+        <ion-label class="small_lbl" position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label class="small_lbl" position="floating">Password</ion-label>
-        <ion-input></ion-input>
+        <ion-input  [(ngModel)]="password"></ion-input>
       </ion-item>
 
       <ion-label class="forgot_lbl">Forgot Password ?</ion-label>
@@ -40,6 +40,10 @@
       <ion-button (click)="goToVerification()" shape="round">
         <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
         Sign In
+      </ion-button>
+      <ion-button (click)="loginWithGoodgle()" shape="round">
+        <ion-icon name="logo-google" slot="end"></ion-icon>
+        Sign In with Google
       </ion-button>
     </div>
 
@@ -51,22 +55,37 @@
 
       <ion-item>
         <ion-label class="small_lbl" position="floating">Name</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label class="small_lbl" position="floating">Email ID</ion-label>
-        <ion-input></ion-input>
+        <ion-label class="small_lbl" position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label class="small_lbl" position="floating">Mobile No.</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="mobile"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Telephone No.</ion-label>
+        <ion-input [(ngModel)]="tel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label class="small_lbl" position="floating">Password</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small_lbl" position="floating">Repeat Password</ion-label>
+        <ion-input [(ngModel)]="repeatPassword"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="" position="top">Profile Avatar</ion-label>
+        <ion-input style="opacity: 0.3;" type="file" (change)="uploadFile($event)"></ion-input>
       </ion-item>
 
       <ion-button (click)="goToVerification()" shape="round">

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import * as moment from 'moment';
 import { NavController } from '@ionic/angular';
+import {BookingService} from '../../services/booking.service';
 
 
 @Component({
@@ -24,7 +25,10 @@ export class SelectDatePage implements OnInit {
   todayDate;
   plt;
 
-  constructor(private router: Router, private navCtrl: NavController) {
+  constructor(private router: Router,
+              private navCtrl: NavController,
+              private bookingService: BookingService
+              ) {
     this.plt = localStorage.getItem('platform');
     this.todayDate = moment();
   }
@@ -49,8 +53,10 @@ export class SelectDatePage implements OnInit {
   }
 
   onCurrentDateChanged(event) {
+    this.bookingService.bookingObject.startDate = event;
     console.log(event);
     this.currnetMonth = this.getDate(event);
+    console.log(this.currnetMonth);
     console.log('====', this.currnetMonth);
   }
 
@@ -68,7 +74,7 @@ export class SelectDatePage implements OnInit {
     this.myDate = moment(this.date).format('ddd, Do MMMM');
     var swiper = document.querySelector('.swiper-container')['swiper'];
 
-    console.log(swiper)
+    console.log(swiper);
     swiper.slideNext();
   }
 

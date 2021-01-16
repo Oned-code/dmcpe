@@ -1,0 +1,12 @@
+.header_no_border:after {
+  content: none;
+}
+
+.active {
+  border-left: 5px solid var(--ion-color-primary);
+}
+
+.mat-expansion-panel-header, .mat-expansion-panel-header-title, .mat-expansion-indicator::after {
+  padding-left: 0;
+  color: var(--ion-color-primary) !important;
+}

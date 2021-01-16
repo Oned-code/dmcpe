@@ -25,6 +25,7 @@
         margin-top: 20px;
 
         ion-button{
+            min-width: 140px;
             --background: white;
             color: black;
         }
@@ -49,9 +50,10 @@
     .btn_div{
         margin-top: 30px;
         text-align: right;
+        clear: both;
         .btn_last{
             width: 140px;
-            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            --background: var(--ion-color-primary);
         }
     }
 }

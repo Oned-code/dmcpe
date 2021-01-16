@@ -19,7 +19,7 @@ ion-toolbar{
         .line_div{
             width: 20px;
             height: 3px;
-            background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            background: var(--ion-color-primary);
             border-radius: 10px;
         }
     }
@@ -52,8 +52,8 @@ ion-toolbar{
 
         ion-button{
             margin-top: 20px;
-            width: 140px;
-            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            min-width: 140px;
+            --background: var(--ion-color-primary);
 
             ion-icon{
                 font-size: 20px;

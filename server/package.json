@@ -1,0 +1,27 @@
+{
+  "name": "dmcpe-server",
+  "version": "1.0.0",
+  "description": "DMCPE node server to perform back-end duties",
+  "main": "mailer.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oned-code/dmcpe.git"
+  },
+  "keywords": [
+    "Construction",
+    "Services"
+  ],
+  "author": "Wandile Chamane - OneD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oned-code/dmcpe/issues"
+  },
+  "homepage": "https://github.com/Oned-code/dmcpe#readme"
+}

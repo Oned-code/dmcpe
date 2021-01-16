@@ -31,6 +31,7 @@
 
     ion-grid{
         padding: 0;
+        float: left;
     }
     ion-textarea{
         border: 1px solid lightgray;
@@ -41,10 +42,10 @@
     .btn_div{
         margin-top: 30px;
         text-align: right;
-
+        clear: both;
         ion-button{
-            width: 140px;
-            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);    
+            min-width: 140px;
+            --background: var(--ion-color-primary);
         }
     }
 

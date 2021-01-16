@@ -27,10 +27,11 @@
 
     .btn_div{
         padding-top: 50px;
-        
+        clear: both;
         ion-button{
+            min-width: 140px;
             margin-top: 10px;
-            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            --background: var(--ion-color-primary);
         }
 
         .clear_btn{

@@ -18,7 +18,7 @@
         height: 120px;
         width: 120px;
         border-radius: 100%;
-        background: linear-gradient(var(--ion-color-primary),#1c7168);
+        background: var(--ion-color-primary);
         display: block;
         margin: auto;
         margin-top: 30px;
@@ -60,7 +60,8 @@
         }
         ion-button{
             margin-top: 20px;
-            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            min-width: 140px;
+            --background: var(--ion-color-primary);
             ion-icon{
                 font-size: 20px;
             }

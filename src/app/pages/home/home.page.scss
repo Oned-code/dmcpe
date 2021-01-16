@@ -5,12 +5,16 @@
 //     display: flex;
 // }
 
-
+.main_content_div label {
+    max-width: 1366px;
+}
 
 .main_content_div{
     width: 100%;
     padding: 10px;
     padding-top: 80px;
+    max-width: 1366px;
+    margin: auto;
 
     ion-label {
         display: block;
@@ -18,12 +22,12 @@
     .slider_div{
         .inner_slide{
             width: 100%;
-            height: 180px;
+            height: 500px;
         }
     }
 
     .simple_lbl{
-        font-size: 23px;
+        font-size: 2em;
         font-family: 'regular';
     }
 
@@ -55,14 +59,14 @@
 
     ion-grid{
         padding: 0;
-
+        float: left;
         .ser_div{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             // background: var(--ion-color-primary);
-            background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            background: var(--ion-color-primary);
             height: 150px;
             border-radius: 10px;
             position: relative;
@@ -91,9 +95,50 @@
 
     .btn_div{
         text-align: right;
+        clear: both;
         ion-button{
-            width: 140px;
-            --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+            min-width: 140px;
+            --background: var(--ion-color-primary);
         }
     }
+    ion-slide {
+        border-right: 5px solid #ffffff;
+    }
+}
+
+
+.profile {
+    width: fit-content;
+    float: right;
+    font-size: 0.8em;
+    color: var(--ion-color-primary);
+    ion-icon {
+            font-size: 30px;
+            vertical-align: middle;
+            color: var(--ion-color-primary);
+    };
+    a {
+        text-decoration: none;
+    }
+}
+
+.header_div ion-row {
+    width: 100%;
+    margin-right: 15px;
+    // border-top: 23px solid var(--ion-color-primary);
+    opacity: 0.8;
+    background: #fff;
+
+}
+
+.slide_content {
+    display: flex;
+    padding: 93px;
+    position: relative;
+    margin-left: -617px;
+    z-index: 3;
+    background: #235173;
+    opacity: 0.5;
+    color: white;
+    box-shadow: 16px 0px 22px #000;
 }

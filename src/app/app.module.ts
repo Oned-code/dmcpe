@@ -16,19 +16,31 @@ import { IonicRatingModule } from 'ionic-rating';
 import { BookingSummaryPageModule } from '../app/pages/booking-summary/booking-summary.module';
 import { RatingPageModule } from '../app/pages/rating/rating.module';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    NgOtpInputModule,
-    NgCalendarModule,
-    BookingSummaryPageModule,
-    RatingPageModule,
-    IonicRatingModule
-  ],
+    imports: [
+        BrowserModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        NgOtpInputModule,
+        NgCalendarModule,
+        BookingSummaryPageModule,
+        RatingPageModule,
+        IonicRatingModule,
+        BrowserAnimationsModule,
+        MatExpansionModule
+    ],
   providers: [
     StatusBar,
     SplashScreen,

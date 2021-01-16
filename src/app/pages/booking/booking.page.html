@@ -16,8 +16,8 @@
       <ion-segment-button value="current">
         <ion-label>Current</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="upcoming">
-        <ion-label>Upcoming</ion-label>
+      <ion-segment-button value="previous">
+        <ion-label>Previous</ion-label>
       </ion-segment-button>
     </ion-segment>
 
@@ -49,9 +49,9 @@
 
     </div>
 
-    <div class="segment_div" *ngIf="segmentID == 'upcoming'">
+    <div class="segment_div" *ngIf="segmentID == 'previous'">
 
-      <ion-label class="simple_lbl">Upcoming Booking</ion-label>
+      <ion-label class="simple_lbl">Previous Booking</ion-label>
 
       <div class="card_div" *ngFor="let item of [1,2,3]">
         <div class="up_div">
@@ -102,8 +102,6 @@
           <ion-label>Order ID : 2087467</ion-label>
         </div>
       </div>
-
     </div>
-
   </div>
 </ion-content>

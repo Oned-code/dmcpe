@@ -42,10 +42,10 @@
         .btn_div{
             margin-top: 20px;
             text-align: right;
-    
+            clear: both;
             ion-button{
                 width: 140px;
-                --background: linear-gradient(to top right,var(--ion-color-primary),#1c7168);
+                --background: var(--ion-color-primary);
             }
         }
     }
