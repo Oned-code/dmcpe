@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./en-za/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: '',
@@ -69,12 +70,51 @@ const routes: Routes = [
   {
     path: 'rating',
     loadChildren: () => import('./pages/rating/rating.module').then( m => m.RatingPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
+  },
+  {
+    path: 'services',
+    loadChildren: () => import('./pages/services/services.module').then( m => m.ServicesPageModule)
+  },
+  {
+    path: 'content-header',
+    loadChildren: () => import('./pages/content-header/content-header.module').then( m => m.ContentHeaderPageModule)
+  },
+  {
+    path: 'service-content',
+    loadChildren: () => import('./pages/service-content/service-content.module').then( m => m.ServiceContentPageModule)
+  },
+  {
+    path: 'gallery',
+    loadChildren: () => import('./pages/gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
+  {
+    path: 'gallery-content',
+    loadChildren: () => import('./pages/gallery-content/gallery-content.module').then( m => m.GalleryContentPageModule)
+  },
+  {
+    path: 'corporate-services',
+    loadChildren: () => import('./pages/corporate-services/corporate-services.module').then( m => m.CorporateServicesPageModule)
+  },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./pages/contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
+  {
+    path: 'footer',
+    loadChildren: () => import('./pages/footer/footer.module').then( m => m.FooterPageModule)
   }
 ];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+      HttpClientModule
+  ]
 })
 export class AppRoutingModule {}

@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {User} from '../models/user.model';
+import {HttpClient} from '@angular/common/http';
+import {Booking} from '../models/booking.model';
+import {BookingService} from './booking.service';
+import {take} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +13,13 @@ import {User} from '../models/user.model';
 export class UploadService {
     private asf: AngularFirestore;
 
-  constructor() { }
+  constructor( private http: HttpClient, private bookingService: BookingService) { }
 
   uploadFile(fi) {
     // File or Blob named mountains.jpg
     const file: Blob | ArrayBuffer | any = fi;
+
+    console.log('file mime type', typeof fi, 'file', file);
 
 // Create the file metadata
     const metadata = {
@@ -21,6 +27,8 @@ export class UploadService {
     };
 // create storage ref
     const storageRef = firebase.storage().ref();
+
+    console.log('file mime type', typeof fi, 'file', file);
 
 // Upload file and metadata to the object 'images/mountains.jpg'
     const uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
@@ -78,5 +86,14 @@ export class UploadService {
             });
           });
         });
+  }
+  sendFile(fl) {
+      // this.bookingService.booking$.subscribe((res: Booking) => {
+      //     this.http.post('http://localhost:5000/dmcpe-mifc/us-central1/bigben/sendAdmin', res).subscribe((result: any) => {
+      //         console.log('server response', result);
+      //     });
+      // });
+      // this.bookingService.bookingObject.clientFiles.push(fl);
+      // this.bookingService.booking.next(this.bookingService.bookingObject);
   }
 }

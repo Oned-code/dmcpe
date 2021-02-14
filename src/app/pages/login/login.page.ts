@@ -47,7 +47,7 @@ export class LoginPage implements OnInit {
     this.auth.emailSignin(this.email, this.password).then((result) => {
       console.log(result);
       if (result) {
-        this.router.navigate(['/tabs/home']);
+        this.router.navigate(['/en-za/home']);
       }
     });
     // Do something else.
@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
     this.auth.googleSignin().then((result) => {
       console.log(result);
       if (result) {
-        this.router.navigate(['/tabs/home']);
+        this.router.navigate(['/en-za/home']);
       }
     });
     // Do something else.

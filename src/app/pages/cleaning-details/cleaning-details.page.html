@@ -1,53 +1,39 @@
-<!-- <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button mode="md" color="light"></ion-back-button>
-    </ion-buttons>
-    <ion-title color="light">cleaning-details</ion-title>
-  </ion-toolbar>
-</ion-header> -->
+<app-content-header></app-content-header>
 
 <ion-content>
-
-  <div class="header_div" [class.ios_header]="plt == 'ios'">
-    <ion-label class="title_lbl">Service Details</ion-label>
-    <ion-button (click)="goBack()" fill="clear" class="back">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-    </ion-button>
-  </div>
 
   <div class="main_content_div" [class.ios_main]="plt == 'ios'">
     <ion-label class="simple_lbl">Choose your Requirements</ion-label>
 
-    <ion-label class="small_lbl">How many resources do you need ?</ion-label>
+<!--    <ion-label class="small_lbl">How many resources do you need ?</ion-label>-->
 
-    <div class="light_div">
-      <div class="lbl_div" [class.active]="cleaner == 1" (click)="chooseClearner(1)">
-        <ion-label>1</ion-label>
-      </div>
-      <div class="lbl_div" [class.active]="cleaner == 2" (click)="chooseClearner(2)">
-        <ion-label>2</ion-label>
-      </div>
-      <div class="lbl_div" [class.active]="cleaner == 3" (click)="chooseClearner(3)">
-        <ion-label>3</ion-label>
-      </div>
-      <div class="lbl_div" [class.active]="cleaner == 4" (click)="chooseClearner(4)">
-        <ion-label>4</ion-label>
-      </div>
-      <div class="lbl_div" [class.active]="cleaner == 5" (click)="chooseClearner(5)">
-        <ion-label>5</ion-label>
-      </div>
-      <div class="lbl_div" [class.active]="cleaner == 6" (click)="chooseClearner(6)">
-        <ion-label>6</ion-label>
-      </div>
-    </div>
+<!--    <div class="light_div">-->
+<!--      <div class="lbl_div" [class.active]="cleaner == 1" (click)="chooseClearner(1)">-->
+<!--        <ion-label>1</ion-label>-->
+<!--      </div>-->
+<!--      <div class="lbl_div" [class.active]="cleaner == 2" (click)="chooseClearner(2)">-->
+<!--        <ion-label>2</ion-label>-->
+<!--      </div>-->
+<!--      <div class="lbl_div" [class.active]="cleaner == 3" (click)="chooseClearner(3)">-->
+<!--        <ion-label>3</ion-label>-->
+<!--      </div>-->
+<!--      <div class="lbl_div" [class.active]="cleaner == 4" (click)="chooseClearner(4)">-->
+<!--        <ion-label>4</ion-label>-->
+<!--      </div>-->
+<!--      <div class="lbl_div" [class.active]="cleaner == 5" (click)="chooseClearner(5)">-->
+<!--        <ion-label>5</ion-label>-->
+<!--      </div>-->
+<!--      <div class="lbl_div" [class.active]="cleaner == 6" (click)="chooseClearner(6)">-->
+<!--        <ion-label>6</ion-label>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <ion-label class="small_lbl">Do you need a service materials ?</ion-label>
+    <ion-label class="small_lbl">Do you need service materials?</ion-label>
 
     <div class="flex_div">
-      <ion-radio-group mode="md">
+      <ion-radio-group [(ngModel)]="material" mode="md">
         <ion-item lines="none">
-          <ion-label>Yes <span>($ 10.00)</span></ion-label>
+          <ion-label>Yes</ion-label>
           <ion-radio value="yes" slot="start"></ion-radio>
         </ion-item>
 
@@ -60,7 +46,7 @@
 
     <ion-label class="small_lbl">You have any special requirements ?</ion-label>
 
-    <ion-textarea placeholder="Write here.." autoGrow="true" rows="4"></ion-textarea>
+    <ion-textarea placeholder="Write here.." autoGrow="true" style="min-height: 200px" [(ngModel)]="materialDescription" rows="4"></ion-textarea>
 
     <ion-label class="small_lbl">Do you have any images to upload?</ion-label>
 

@@ -46,7 +46,7 @@ export class EditProfilePage implements OnInit {
   }
 
   goToProfile() {
-    this.router.navigate(['/tabs/profile']);
+    this.router.navigate(['/en-za/profile']);
   }
 
 }

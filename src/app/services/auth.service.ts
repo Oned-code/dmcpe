@@ -13,24 +13,27 @@ import firebase from 'firebase';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   user$: Observable<User>;
+  public isActivated = false;
 
   constructor(
       private afAuth: AngularFireAuth,
       private afs: AngularFirestore,
       private router: Router
   ) {
-    this.user$ = this.afAuth.authState.pipe(
-        switchMap(user => {
-          // Logged in
-            console.log(user);
-            if (user) {
-            return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-          } else {
-            // Logged out
-            return of(null);
-          }
-        })
-    );
+      if (this.isActivated) {
+          this.user$ = this.afAuth.authState.pipe(
+              switchMap(user => {
+                  // Logged in
+                  console.log(user);
+                  if (user) {
+                      return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+                  } else {
+                      // Logged out
+                      return of(null);
+                  }
+              })
+          );
+      }
   }
     async emailSignin(email, password) {
         // const provider = new auth.GoogleAuthProvider();

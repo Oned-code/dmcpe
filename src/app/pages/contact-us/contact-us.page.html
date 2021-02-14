@@ -1,0 +1,41 @@
+<app-content-header></app-content-header>
+
+<ion-content style="">
+  <div class="main_content_div">
+    <ion-label class="simple_lbl" color="primary">Let's have a chat</ion-label>
+    <ion-row>
+      <ion-col [sizeLg]="'6'" [sizeXs]="'12'">
+        <img src="assets/imgs/contact-us.jpg" alt="about-us">
+      </ion-col>
+      <ion-col [sizeLg]="'6'" [sizeXs]="'12'">
+        <div class="p-styling-div">
+          <ion-label class="simple_lbl" color="primary">Contact Details</ion-label>
+          <p>
+            Name: DM CPE Pty (Ltd)
+          </p>
+          <p>
+            Call: 011 568 0207
+          </p>
+          <p>
+            WhatsApp: 079 498 9129
+          </p>
+          <p>
+            Email: info@dmcpe.online (technical) , sales@dmcpe.online (Sales)
+          </p>
+          <p>
+            Website: www.dmcpe.online
+          </p>
+          <p>
+            BEE Accreditation: Level 1 (EME)
+          </p>
+          <ion-button (click)="gotoAddress()">
+            <ion-icon name="chatbubble-outline">
+            </ion-icon>
+            &nbsp;
+            Get in Touch.
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

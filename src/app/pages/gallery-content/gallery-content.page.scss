@@ -1,0 +1,10 @@
+@media only screen and (max-width: 768px) {
+  .gallery-column-col {
+    position: absolute;
+    z-index: 500;
+  }
+
+  .gallery-column-col-right {
+    left: 90vw;
+  }
+}

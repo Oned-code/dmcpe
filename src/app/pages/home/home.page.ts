@@ -20,9 +20,35 @@ export class HomePage implements OnInit {
       private router: Router,
       public authService: AuthService,
       public bookingService: BookingService) {
-    this.plt = localStorage.getItem('platform');
+      this.plt = localStorage.getItem('platform');
   }
   service;
+  slidesList = [{
+    title: 'This is what we do',
+    description: 'For all your Home and renovation needs',
+    link: '/en-za/services',
+    background: 'url(assets/imgs/slide1.jpg)',
+    buttonText: 'Find out more...'
+  }, {
+    title: 'We See Art in Timber',
+    description: 'For all your Home and renovation needs',
+    link: '/en-za/services',
+    serviceName: 'carpentry',
+    background: 'url(assets/imgs/carpentry-big.jpg)',
+    buttonText: 'Book a Consultation',
+    get service() {
+      return this.serviceName;
+    },
+    function: () => {
+      this.goToSelectDate(this.slidesList[1].service);
+    }
+  }, {
+    title: 'Prevent Leaks!',
+    description: 'Get all your plumbing needs, sorted.',
+    link: '/en-za/services',
+    background: 'url(assets/imgs/slide3.jpg)',
+    buttonText: 'Book a Consultation',
+  }];
 
   services = [
     {
@@ -51,10 +77,14 @@ export class HomePage implements OnInit {
   slideOpts = {};
 
   ngOnInit() {
-    this.authService.user$.subscribe((res) => {
-      console.log(res);
-      this.user = res;
-    });
+
+    if (this.authService.isActivated) {
+      this.authService.user$.subscribe((res) => {
+        console.log(res);
+        this.user = res;
+      });
+    }
+
 
 
     this.router.events.subscribe(e => {
@@ -65,7 +95,8 @@ export class HomePage implements OnInit {
       initialSlide: 0,
       slidesPerView: 1,
       autoplay: true,
-      speed: 5000
+      speed: 5000,
+      loop: true
     };
   }
 
@@ -88,5 +119,16 @@ export class HomePage implements OnInit {
 
   showMenu() {
     this.menuCntrl.open('menu');
+  }
+
+  extendSlides(e: IonSlide) {
+    // const pushBack = this.slidesList[0];
+    // this.slidesList.push(pushBack);
+    // console.log(e , this.slidesList);
+  }
+
+  goToPage(url) {
+    console.log(url);
+    this.router.navigate([url]);
   }
 }

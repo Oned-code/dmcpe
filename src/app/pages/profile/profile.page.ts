@@ -17,11 +17,11 @@ export class ProfilePage implements OnInit {
   }
 
   goToHistory() {
-    this.router.navigate(['/tabs/history']);
+    this.router.navigate(['/en-za/history']);
   }
 
   goToBooking() {
-    this.router.navigate(['/tabs/booking']);
+    this.router.navigate(['/en-za/booking']);
   }
 
   logout() {

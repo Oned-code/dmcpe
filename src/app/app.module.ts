@@ -22,6 +22,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {FooterPageModule} from './pages/footer/footer.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,9 +41,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
         RatingPageModule,
         IonicRatingModule,
         BrowserAnimationsModule,
-        MatExpansionModule
+        MatExpansionModule,
+        FooterPageModule
+    ],
+    exports: [
+        HttpClientModule,
     ],
   providers: [
+      HttpClient,
     StatusBar,
     SplashScreen,
     OneSignal,

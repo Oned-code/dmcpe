@@ -1,0 +1,30 @@
+<ion-header>
+  <a color="tertiary" (click)="dismiss()" style="float: right; font-size: 34px">
+    <ion-icon name="close-outline"></ion-icon>
+  </a>
+</ion-header>
+<ion-content>
+  <ion-row style="height: 100%;">
+    <ion-col sizeSm="1" sizeLg="1" sizeMd="1" style="
+       justify-content: center;
+       " class="gallery-column-col">
+      <a *ngIf="imageIndex > 0" color="tertiary" style="
+        margin-top: 30vh;
+        display: flex;
+        font-size: 30px;"
+         (click)="back()">
+        <ion-icon name="chevron-back-outline"></ion-icon></a>
+    </ion-col>
+    <ion-col sizeMd="10" sizeLg="10" size-xs="12">
+      <img [src]="imageList[imageIndex]" alt="Gallery Image">
+    </ion-col>
+    <ion-col sizeSm="1" sizeLg="1" sizeMd="1" class="gallery-column-col gallery-column-col-right">
+      <a *ngIf="imageIndex < imageList.length - 1" color="tertiary" style="
+        margin-top: 30vh;
+        display: flex;
+        font-size: 30px;"
+      (click)="next()"> <ion-icon name="chevron-forward-outline"></ion-icon></a>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

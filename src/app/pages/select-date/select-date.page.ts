@@ -40,11 +40,11 @@ export class SelectDatePage implements OnInit {
   }
 
   getDate(date) {
-    var d = new Date(date);
+    const d = new Date(date);
     const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
       'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
     ];
-    var c = monthNames[d.getMonth()];
+    const c = monthNames[d.getMonth()];
     return c;
   }
 
@@ -53,7 +53,7 @@ export class SelectDatePage implements OnInit {
   }
 
   onCurrentDateChanged(event) {
-    this.bookingService.bookingObject.startDate = event;
+    this.bookingService.bookingObject.capturedDate = event;
     console.log(event);
     this.currnetMonth = this.getDate(event);
     console.log(this.currnetMonth);
@@ -61,21 +61,21 @@ export class SelectDatePage implements OnInit {
   }
 
   back() {
-    this.date = this.todayDate.subtract(1,'days').toDate();
-    this.myDate = moment(this.date).format('ddd, Do MMMM')
-    var swiper = document.querySelector('.swiper-container')['swiper'];
-    var date = moment().add('-1', 'M').toLocaleString();
+    this.date = this.todayDate.subtract(1, 'days').toDate();
+    this.myDate = moment(this.date).format('ddd, Do MMMM');
+    const swiper: any = document.querySelector('.swiper-container');
+    const date = moment().add('-1', 'M').toLocaleString();
     this.currnetMonth = this.getDate(date);
-    swiper.slidePrev();
+    swiper.swiper.slidePrev();
   }
 
   next() {
-    this.date = this.todayDate.add(1,'days').toDate();
+    this.date = this.todayDate.add(1, 'days').toDate();
     this.myDate = moment(this.date).format('ddd, Do MMMM');
-    var swiper = document.querySelector('.swiper-container')['swiper'];
+    const swiper: any = document.querySelector('.swiper-container');
 
     console.log(swiper);
-    swiper.slideNext();
+    swiper.swiper.slideNext();
   }
 
   goBack() {

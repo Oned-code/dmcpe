@@ -36,8 +36,10 @@ $app-theme: mat-light-theme((
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
 /** Ionic CSS Variables **/
 :root {
+  --border-radius: 0 !important;
   /** primary **/
   //--ion-color-primary: #2cbba9;
   --ion-color-primary: #236294;

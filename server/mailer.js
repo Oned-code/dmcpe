@@ -21,7 +21,12 @@ app.get('/registration', (req, res) => {
         from: 'info@dmcpe.co.za',
         to: req.body ? req.body['toAddress'] : 'wandile.chamane@gmail.com',
         subject: 'Welcome!! Registration successful, Please verify your email',
-        text: "happy"
+        text: "happy",
+        attachments : [
+            {   // use URL as an attachment
+            filename: 'license.txt',
+            path: 'https://raw.github.com/nodemailer/nodemailer/master/LICENSE'
+        }]
     }
 
     transporter.sendMail(mailOptions, function (error, info){

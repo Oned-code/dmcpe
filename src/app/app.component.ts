@@ -23,40 +23,33 @@ export class AppComponent {
       {
         name: 'About Us',
         icon: 'newspaper',
-        link: '/tabs/booking',
+        link: '/en-za/about-us',
       },
       {
         name: 'Services',
         icon: 'person',
-        link: '/tabs/services',
+        link: '/en-za/services',
         children: [
             {
               name: 'Home & Micro Renovations',
               icon: '',
-              link: '/tabs/home-renovations'
+              link: '/en-za/services'
             }, {
               name: 'Corporate & Developers',
               icon: '',
-              link: '/tabs/corp-and-developers'
+              link: '/en-za/corporate-services'
             }]
       },
       {
         name: 'Gallery & Reviews',
         icon: 'chatbubbles',
-        link: '/tabs/chat',
+        link: '/en-za/gallery-&-reviews',
       },
       {
         name: 'Contact us',
         icon: 'chatbubbles',
-        link: '/tabs/chat',
-      },
-      {
-        name: 'logout',
-        icon: 'log-out',
-        link: '/tabs/logout',
-      },
-
-
+        link: '/en-za/contact-us',
+      }
     ];
 
 

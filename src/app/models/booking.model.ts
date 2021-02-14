@@ -1,10 +1,17 @@
 export interface Booking {
   name: string;
-  startDate: Date;
-  endDate: Date;
-  resources: number;
-  material: boolean;
+  consultationDate: Date;
+  material: string;
   materialDescription: string;
+  clientEmail: string;
+  clientNumber: number;
+  clientFiles: File[] | any;
+  capturedDate: Date;
+  clientName: string;
+  city: string;
+  postcode: string;
+  contactNumber: number;
+  streetAddress: string;
 }
 export interface BookingResult {
   id: any;

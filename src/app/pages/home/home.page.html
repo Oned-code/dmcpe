@@ -12,8 +12,8 @@
         <ion-menu-toggle>
           <ion-buttons>
             <ion-menu-button></ion-menu-button>
-            <a [routerLink]="'/tabs/home'">
-              <img src="assets/imgs/logo.png" alt="DMCPE">
+            <a [routerLink]="'/en-za/home'">
+              <img src="assets/imgs/logo.png" alt="DM CPE">
             </a>
           </ion-buttons>
         </ion-menu-toggle>
@@ -21,7 +21,7 @@
 <!--        <ion-menu-button [menu]="menu" auto-hide>-->
 <!--        </ion-menu-button>-->
       </ion-col>
-      <ion-col size="10">
+      <ion-col size="10" *ngIf="authService.isActivated">
         <div class="profile" *ngIf="user">
           {{ user['displayName'] || user['email'] }}
           <ion-icon name="person-circle-outline"></ion-icon>
@@ -40,7 +40,7 @@
   <div class="main_content_div" [class.ios_main]="plt == 'ios'">
 
     <ion-label class="simple_lbl" color="primary">Welcome</ion-label>
-    <ion-label class="bold_lbl" color="secondary">Discover our services</ion-label>
+    <ion-label class="bold_lbl" color="secondary">Discover our services, what we do and more...</ion-label>
 
     <!-- <ion-searchbar placeholder="Search Services" showCancelButton="never"></ion-searchbar> -->
 
@@ -49,69 +49,67 @@
 <!--    </ion-input>-->
 
     <div class="slider_div" style="height: 500px; margin: 20px -123px;">
-      <ion-slides mode="ios" pager="ios"  [options]="slideOpts" (ionSlideTap)="goToNextSlide()">
-        <ion-slide style="width: 80%;">
-          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/female-construction-worker.jpg)'"></div>
+      <ion-slides mode="ios" pager="ios" (ionSlideTransitionEnd)="extendSlides($event)" [options]="slideOpts" (ionSlideTap)="goToNextSlide()">
+        <ion-slide *ngFor="let slide of slidesList" style="width: 80%;">
+          <div class="inner_slide bg_image" [style.backgroundImage]="slide.background"></div>
           <div class="slide_content">
-            <ion-label class="simple_lbl">Discover</ion-label>
-            <ion-label class="bold_lbl">Services</ion-label>
-            <p></p>
+            <ion-col>
+              <ion-label class="simple_lbl" color="tertiary">{{ slide.title }}</ion-label>
+              <ion-label class="bold_lbl" color="tertiary">{{ slide.description }}</ion-label>
+              <button *ngIf="!slide.function" color="primary" (click)="goToPage(slide.link)" class="button-native" style="
+                  border-radius: 0;
+                  box-shadow: 1px 5px 16px 0px #000;
+                  padding: 10px;
+                  background: var(--ion-color-primary);
+                  color: white;
+                  ">
+                <ion-label>{{ slide.buttonText }}  <ion-icon name="chevron-forward-sharp"></ion-icon></ion-label>
+              </button>
+              <button *ngIf="slide.function" color="primary" (click)="slide.function()" class="button-native" style="
+                  border-radius: 0;
+                  box-shadow: 1px 5px 16px 0px #000;
+                  padding: 10px;
+                  background: var(--ion-color-primary);
+                  color: white;
+                  ">
+                <ion-label>{{ slide.buttonText }}  <ion-icon name="chevron-forward-sharp"></ion-icon></ion-label>
+              </button>
+            </ion-col>
           </div>
         </ion-slide>
-        <ion-slide style="width: 80%;">
-          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/carpentry-big.jpg)'">
-          </div>
-          <div class="slide_content">
-            <ion-label class="simple_lbl">Discover</ion-label>
-            <ion-label class="bold_lbl">Services</ion-label>
-            <p></p>
-          </div>
-        </ion-slide>
-        <ion-slide style="width: 80%;">
-          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/slide3.jpg)'"></div>
-        </ion-slide>
+<!--        <ion-slide style="width: 80%;">-->
+<!--          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/carpentry-big.jpg)'"></div>-->
+<!--          <div class="slide_content">-->
+<!--            <ion-col>-->
+<!--              <ion-label class="simple_lbl" color="tertiary">Welcome</ion-label>-->
+<!--              <ion-label class="bold_lbl" color="tertiary">Discover our services, what we do and more...</ion-label>-->
+<!--            </ion-col>-->
+<!--          </div>-->
+<!--        </ion-slide>-->
+<!--        <ion-slide style="width: 80%;">-->
+<!--          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/wood.jpg)'">-->
+<!--          </div>-->
+<!--          <div class="slide_content">-->
+<!--            <ion-col>-->
+<!--              <ion-label class="simple_lbl" color="tertiary">Welcome</ion-label>-->
+<!--              <ion-label class="bold_lbl" color="tertiary">Discover our services, what we do and more...</ion-label>-->
+<!--            </ion-col>-->
+<!--          </div>-->
+<!--        </ion-slide>-->
+<!--        <ion-slide style="width: 80%;">-->
+<!--          <div class="inner_slide bg_image" [style.backgroundImage]="'url(assets/imgs/slide3.jpg)'"></div>-->
+<!--          <div class="slide_content">-->
+<!--            <ion-col>-->
+<!--              <ion-label class="simple_lbl" color="tertiary">Welcome</ion-label>-->
+<!--              <ion-label class="bold_lbl" color="tertiary">Discover our services, what we do and more...</ion-label>-->
+<!--            </ion-col>-->
+<!--          </div>-->
+<!--        </ion-slide>-->
       </ion-slides>
     </div>
     <ion-item-divider></ion-item-divider>
-    <ion-label class="simple_lbl">Services</ion-label>
-    <ion-card-subtitle>Book a service today!</ion-card-subtitle>
-    <div style="margin: auto; width: fit-content; background: url('assets/imgs/repeated-square.png'); min-height: 683px;">
-      <ion-grid >
-        <ion-row>
-          <ion-col size-lg="4" size-md="3" size-sm="12" *ngFor="let item of services; let i = index">
-
-            <ion-card>
-              <img [alt]="item.name" [src]="item.img">
-              <ion-card-header>
-                <ion-card-title>
-                  {{item.name}}
-                </ion-card-title>
-                <ion-card-subtitle>
-                  {{item.description}}
-                </ion-card-subtitle>
-                <ion-card-content>
-
-                </ion-card-content>
-              </ion-card-header>
-              <ion-button (click)="goToSelectDate(item.name)" color="tertiary">
-                Make a Booking
-                <ion-icon slot="end" name="arrow-forward"></ion-icon>
-              </ion-button>
-            </ion-card>
-            <!--          <div class="ser_div" (click)="selectService(item)">-->
-            <!--            <ion-icon name="checkmark-circle" *ngIf="service == item"></ion-icon>-->
-            <!--            <ion-icon class="item_icons" name="{{item.img.split('/')[2].split('.')[0]}}" color="secondary"></ion-icon>-->
-            <!--            <ion-label>{{item.name}}</ion-label>-->
-            <!--            <ion-button class="button-round">-->
-            <!--              Make a Booking-->
-            <!--              <ion-icon slot="end" name="arrow-forward"></ion-icon>-->
-            <!--            </ion-button>-->
-            <!--          </div>-->
-          </ion-col>
-          <ion-col size="6"></ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+    <ion-label class="bold_lbl" color="secondary">Featured</ion-label>
+   <app-service-content></app-service-content>
 
 
 <!--    <div class="btn_div">-->
@@ -121,4 +119,5 @@
 <!--    </div>-->
 
   </div>
+    <app-footer></app-footer>
 </ion-content>

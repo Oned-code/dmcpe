@@ -1,0 +1,25 @@
+<ion-header *ngIf="canShow">
+  <ion-toolbar color="tertiary">
+    <ion-row>
+      <ion-col size="2">
+        <ion-menu-toggle>
+          <ion-buttons>
+            <ion-back-button (click)="goBack();" style="display: inline-flex;">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </ion-back-button>
+            <ion-menu-button></ion-menu-button>
+            <a [routerLink]="'/tabs/home'">
+              <img src="assets/imgs/logo.png" alt="DMCPE">
+            </a>
+          </ion-buttons>
+        </ion-menu-toggle>
+      </ion-col>
+      <ion-col size="2">
+
+      </ion-col>
+      <ion-col size="8">
+
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,31 @@
+<app-content-header></app-content-header>
+
+<ion-content>
+
+    <div class="main_content_div">
+        <ion-label class="simple_lbl">Gallery & Reviews</ion-label>
+        <ion-card-subtitle>Have a look at our work! leave a comment</ion-card-subtitle>
+        <ion-label slot="center">
+            <ion-label *ngIf="!galleryList">Geting images please wait...</ion-label>
+        </ion-label>
+        <ion-row>
+            <ion-col *ngFor="let img of galleryList; let i = index;">
+                <ion-card>
+                        <img [alt]="i" [src]="img" />
+                    <ion-buttons>
+                        <ion-button color="primary" (click)="viewGallery(i)">
+                            View
+                            <ion-icon name="expand"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+        <ion-item-divider></ion-item-divider>
+        <ion-col *ngFor="let review of reviewers; let i = index">
+            <ion-label *ngIf="!reviewers">Geting images please wait...</ion-label>
+        </ion-col>
+    </div>
+
+</ion-content>

@@ -22,7 +22,13 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "bigben"
+        "function": "bigben",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/public/**",
+        "function": "bigben",
+        "destination": "/public.html"
       }
     ]
   },
@@ -32,7 +38,11 @@
   "emulators": {
     "firestore": {
       "host": "localhost",
-      "port": "9050"
+      "port": "9049"
+    },
+    "functions": {
+      "host": "localhost",
+      "port": "5000"
     }
   }
 }

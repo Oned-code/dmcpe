@@ -1,0 +1,50 @@
+<div class="main_content_div">
+  <ion-label class="simple_lbl">Services</ion-label>
+  <ion-card-subtitle>Discover our services</ion-card-subtitle>
+  <ion-row>
+    <ion-col size="6" size-sm="12">
+      <img style="opacity: 0.1; margin-bottom: -345px;" src="assets/imgs/services-bg.jpg" alt="services">
+    </ion-col>
+    <ion-col size="6" size-sm="12">
+      <p>
+        <ion-label class="bold_lbl" color="secondary" style="margin-left: 20px;">Book a consultation in few steps! </ion-label>
+      </p>
+    </ion-col>
+  </ion-row>
+  <div style="margin: auto; width: fit-content; background: url('assets/imgs/repeated-square.png'); min-height: 683px;">
+    <ion-grid >
+      <ion-row>
+        <ion-col size-lg="4" size-md="3" size-sm="12" *ngFor="let item of services; let i = index">
+          <ion-card>
+            <img [alt]="item.name" [src]="item.img">
+            <ion-card-header>
+              <ion-card-title>
+                {{item.name}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                {{item.description}}
+              </ion-card-subtitle>
+              <ion-card-content>
+
+              </ion-card-content>
+            </ion-card-header>
+            <ion-button (click)="goToSelectDate(item.name)" color="tertiary">
+              Make a Booking
+              <ion-icon name="chevron-forward-sharp"></ion-icon>
+            </ion-button>
+          </ion-card>
+          <!--          <div class="ser_div" (click)="selectService(item)">-->
+          <!--            <ion-icon name="checkmark-circle" *ngIf="service == item"></ion-icon>-->
+          <!--            <ion-icon class="item_icons" name="{{item.img.split('/')[2].split('.')[0]}}" color="secondary"></ion-icon>-->
+          <!--            <ion-label>{{item.name}}</ion-label>-->
+          <!--            <ion-button class="button-round">-->
+          <!--              Make a Booking-->
+          <!--              <ion-icon slot="end" name="arrow-forward"></ion-icon>-->
+          <!--            </ion-button>-->
+          <!--          </div>-->
+        </ion-col>
+        <ion-col size="6"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

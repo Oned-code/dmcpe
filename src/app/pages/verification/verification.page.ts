@@ -29,7 +29,7 @@ export class VerificationPage implements OnInit {
   }
 
   goToHome() {
-    this.router.navigate(['/tabs/home']);
+    this.router.navigate(['/en-za/home']);
   }
 
 }
