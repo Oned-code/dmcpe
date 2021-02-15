@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve && node functions/lib/index.js",
-    "build": "ng build && firebase deploy",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
