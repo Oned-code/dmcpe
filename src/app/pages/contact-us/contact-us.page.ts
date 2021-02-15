@@ -14,6 +14,8 @@ export class ContactUsPage implements OnInit {
   }
 
     gotoAddress() {
-        this.router.navigate(['/add-address']);
+        this.router.navigate(['/add-address'], {queryParams: {
+             isContactUs : true
+          }});
     }
 }

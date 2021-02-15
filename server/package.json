@@ -2,7 +2,7 @@
   "name": "dmcpe-server",
   "version": "1.0.0",
   "description": "DMCPE node server to perform back-end duties",
-  "main": "mailer.js",
+  "main": "mailer_backup.js",
   "scripts": {
     "test": "npm test"
   },
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/Oned-code/dmcpe/issues"
   },
-  "homepage": "https://github.com/Oned-code/dmcpe#readme"
+  "homepage": "https://github.com/Oned-code/dmcpe#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
+    "eslint-plugin-import": "^2.22.0",
+    "typescript": "^3.8.0"
+  }
 }

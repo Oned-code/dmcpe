@@ -164,27 +164,27 @@ app.post('/sendAdmin', (req, res) => {
         }
     });
 
-    res.send(transporter2.sendMail(body, (err: any, result: any) => {
-            if (err) {
-                console.log(err);
-                return false;
-            }
-            console.log(result);
-            console.log('email sent');
-            return true;
-        }));
+    res.send(transporter2.sendMail(body, (err, result) => {
+        if (err) {
+            console.log(err);
+            return false;
+        }
+        console.log(result);
+        console.log('email sent');
+        return true;
+    }));
 
-    res.send(transporter2.sendMail(bodyCustomer, (err: any, result: any) => {
-            if (err) {
-                console.log(err);
-                return false;
-            }
-            console.log(result);
-            console.log('email sent');
-            return true;
-        }));
+    res.send(transporter2.sendMail(bodyCustomer, (err, result) => {
+        if (err) {
+            console.log(err);
+            return false;
+        }
+        console.log(result);
+        console.log('email sent');
+        return true;
+    }));
 
-    transporter1.verify((error: any, success: any) => {
+    transporter1.verify((error, success) => {
         if (error) {
             console.log(error);
         } else {
@@ -266,7 +266,7 @@ app.get('/contact-us', (req, res) => {
         }
     });
 
-    transporter.verify((error: any, success: any) => {
+    transporter.verify((error, success) => {
         if (error) {
             console.log(error);
         } else {
@@ -274,7 +274,7 @@ app.get('/contact-us', (req, res) => {
         }
     });
 
-    res.send(transporter.sendMail(body, (err: any, result: any) => {
+    res.send(transporter.sendMail(body, (err, result) => {
         if (err) {
             console.log(err);
             return false;

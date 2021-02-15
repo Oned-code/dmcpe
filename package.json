@@ -5,7 +5,7 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve && node functions/lib/index.js",
     "build": "ng build && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
