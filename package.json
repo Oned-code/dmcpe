@@ -5,7 +5,7 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "node functions/lib/index.js"
+    "start": "node ./functions/lib/index.js"
   },
   "private": true,
   "dependencies": {
